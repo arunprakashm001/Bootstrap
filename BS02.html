@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excercise</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container" style="background-color: aliceblue;">
+        <h1>Lorem ipsum dolor sit. <small>smaller text</small></h1>
+        <p>Lorem ipsum dolor sit amet consectetur <mark>Lorem, ipsum dolor.</mark> adipisicing elit. Consectetur repellat ullam vitae possimus blanditiis earum fugiat fuga cum officiis voluptatibus!</p>
+        <p>Lorem ipsum dolor sit amet <abbr title="Automatic Teller Machine">ATM</abbr>, adipisicing elit. Provident, eos.</p>
+        <p>Envelope icon: <span class="glyphicon glyphicon-search"></span></p>
+       <dl>
+        <dt>Milk</dt>
+        <dd>-cow milk</dd>
+        <dt>Dog</dt>
+        <dd>-Street dog</dd>
+        <ul class="pager">
+            <li><a href="#">Previous</a></li>
+            <li><a href="#">Next</a></li>
+          </ul>
+       </dl>
+        <p>Lorem ipsum dolor <code>sit</code> sit amet <code>consectetur</code> consectetur adipisicing elit. Eum, optio.</p>
+        <p>use <kbd>Ctrl+C</kbd>for copy</p>
+        <pre>
+            Lorem ipsum dolor 
+            sit, amet consectetur adipisicing elit. Nam veritatis            voluptatum 
+            doloremque rerum labore pariatur adipisci aspernatur excepturi totam quo culpa accusamus   consectetur autem impedit itaque nisi
+             aperiam, nesciunt         expedita?
+        </pre>
+
+        <p class="text-muted">Testing text color</p>
+        <p class="text-primary">Testing text color</p>
+        <p class="text-success">Testing text color</p>
+        <p class="text-info">Testing text color</p>
+        <p class="text-warning">Testing text color</p>
+        <p class="text-danger">Testing text color</p>
+
+        <p class="bg-primary">Testing text color</p>
+        <p class="bg-success">Testing text color</p>
+        <p class="bg-info">Testing text color</p>
+        <p class="bg-warning">Testing text color</p>
+        <p class="bg-danger">Testing text color</p>
+        <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>john@example.com</td>
+              </tr>
+              <tr>
+                <td>Mary</td>
+                <td>Moe</td>
+                <td>mary@example.com</td>
+              </tr>
+              <tr>
+                <td>July</td>
+                <td>Dooley</td>
+                <td>july@example.com</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="btn-group-justified">
+            <div class="btn btn-danger">Lorem</div>
+            <div class="btn btn-info">Lorem</div>
+            <div class="btn btn-warning">Lorem</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Image Gallery</h2>
+        <p>The .thumbnail class can be used to display an image gallery.</p>
+        <p>The .caption class adds proper padding and a dark grey color to text inside thumbnails.</p>
+        <p>Click on the images to enlarge them.</p>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="./BSIMG/pexels-frank-cone-2258536.jpg" style="width:100%">
+                <div class="caption">
+                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                </div>
+              
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="./BSIMG/pexels-frank-cone-2258536.jpg" style="width:100%">
+                <div class="caption">
+                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="./BSIMG/pexels-frank-cone-2258536.jpg" style="width:100%">
+                <div class="caption">
+                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+   
+    <div class="container">
+        <h2>Basic Progress Bar</h2>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;"> <span class="sr-only">70% Loading</span>
+            </div>
+        </div>
+      </div>
+    <div class="container">
+        <h2>Alerts</h2>
+        <div class="alert alert-success">
+          <strong>Success!</strong> This alert box could indicate a successful or positive action.
+        </div>
+        <div class="alert alert-info">
+          <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+        </div>
+        <div class="alert alert-warning">
+          <strong>Warning!</strong> This alert box could indicate a warning that might need attention.
+        </div>
+        <div class="alert alert-danger">
+          <strong>Danger!</strong> This alert box could indicate a dangerous or potentially negative action.
+        </div>
+      </div>
+    <div class="container">
+        <h2>Simple Collapsible</h2>
+        <p>Click on the button to toggle between showing and hiding content.</p>
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+        <div id="demo" class="collapse">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </div>
+      </div>
+      <div class="container">
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+            <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+              <li><a href="#">HTML</a></li>
+              <li><a href="#">CSS</a></li>
+              <li><a href="#">JavaScript</a></li>
+            </ul>
+          </div>
+    </div>vv
+    <div class="container">
+    <form action="">
+      <div class="form-group">
+        <!-- <span class="input-group-addon"> <i class="glyphicon glyphicon-user"></i></span> -->
+        <label for="Email">Email:</label>
+        <input type="text" class="form-control" placeholder="Enter your Email">
+      </div>
+      <div class="form-group">
+        <label for="Mobile">Mobile Number:</label>
+        <input type="number" class="form-control" placeholder="Enter your Mobile number">
+      </div>
+      <div class="checkbox">
+        <label for="checkbox"><input type="checkbox">MSG alert</label>
+      </div>
+      <button class="btn btn-primary">SUBMIT</button>
+    </form>
+    </div>
+    <br>
+    <div class="container">
+      <div class="media">
+        <div class="media-left">
+          <img src="./BSIMG/pexels-pixabay-206501.jpg" alt="" class="media-object img-thumbnail" style="width: 60px; height: 60px;">
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Left-aligned</h4>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque facilis, ad repellat pariatur autem nihil, voluptatibus ipsum perferendis nemo ex nesciunt! Necessitatibus libero doloremque voluptas quasi incidunt? A, dolorem cumque.</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">Right-aligned</h4>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam, nam sunt? Ratione ex odio itaque! Quos commodi, saepe eligendi reprehenderit nostrum, porro, hic cum nam cupiditate consectetur fugit ipsa. Incidunt?</p>
+        </div>
+        <div class="media-right">
+          <img src="./BSIMG/pexels-pixabay-206501.jpg" alt="" class="media-object img-circle img-thumbnail" style="width: 60px; height: 60px;">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Slides</h2>
+      <div id="myC" class="carousel slide" data-ride="carousel">
+        <!-- <ol class="carousel-indicatiors">
+          <li data-target="#myC" data-slide-to="0" class="active" ></li>
+          <li data-target="#myC" data-slide-to="1"></li>
+          <li data-target="#myC" data-slide-to="2"></li>
+        </ol> -->
+        <div class="carousel-inner">
+          <div class="item active">
+            <img src="./BSIMG/pexels-charles-parker-5847427.jpg" alt="" style="height: 500px; width: 100%;">
+            <div class="carousel-caption">
+              <h3>Bridge</h3>
+              <p>Lorem ipsum dolor sit amet.!</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./BSIMG/pexels-charles-parker-5847765.jpg" alt="" style="height: 500px; width: 100%;">
+            <div class="carousel-caption">
+              <h3>Building</h3>
+              <p>Eagle view of buildings!</p>
+            </div>
+          </div>
+          <div class="item">
+            <img src="./BSIMG/pexels-enric-cruz-lópez-6039250.jpg" alt="" style="height: 500px; width: 100%;">
+            <div class="carousel-caption">
+              <h3>Road</h3>
+              <p>Road always loves riders!</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#myC" class="left carousel-control" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#myC" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right"></span>
+          <!-- <span class="sr-only">Next</span> -->
+        </a>
+      </div>
+    </div>
+   
+    
+</body>
+</html>

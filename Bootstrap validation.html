@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BS07</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">STUDENT FORM</h1>
+        <form action="" id="faccess">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="">Name:</label>
+                    <input type="text" class="form-control" placeholder="Enter your name" id="name">
+                    <div id="nameerror" class="text-danger"></div>
+                </div>
+                <div class="col-md-4">
+                    <label for="">Age:</label>
+                    <input type="number" class="form-control" placeholder="Enter your age" id="age">
+                    <div id="ageerror" class="text-danger"></div>
+                </div>
+                <div class="col-md-4">
+                    <label for="">RollNumber:</label>
+                    <input type="text" class="form-control" placeholder="Enter your rollno" id="rollno">
+                    <div id="rollnoerror" class="text-danger"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="">Email:</label>
+                    <input type="email" class="form-control" placeholder="Enter your email" id="mail">
+                    <div id="mailerror" class="text-danger"></div>
+                </div>
+                <div class="col-md-6">
+                    <label for="">Address:</label>
+                    <textarea class="form-control" placeholder="Enter your address" id="add"></textarea>
+                    <div id="adderror" class="text-danger"></div>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-md-12">
+                    <label for="">Gender:</label>
+                    <input type="radio" class="form-check-input" name="gender" value="male">
+                    <label for="">Male</label>
+                    <input type="radio" class="form-check-input" name="gender" value="female">
+                    <label for="">Female</label>
+                    <input type="radio" class="form-check-input" name="gender" value="others">
+                    <label for="">Others</label>
+                    <div id="gendererror" class="text-danger"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="">Sports:</label>
+                    <input type="checkbox" class="form-check-input" name="sport" value="cricket">
+                    <label for="">Cricket</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="form-check-input" name="sport" value="volleyball">
+                    <label for="">volleyball</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="form-check-input" name="sport" value="Tabletennis">
+                    <label for="">Tabletennis</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="form-check-input" name="sport" value="Football">
+                    <label for="">Football</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="form-check-input" name="sport" value="Basketball">
+                    <label for="">Basketball</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="checkbox" class="form-check-input" name="sport" value="Hockey">
+                    <label for="">Hockey</label>
+                </div>
+                <div id="sporterror" class="text-danger" style="margin-left: 15px;"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="">Select your favourite subject:</label>
+                    <select class="form-select" aria-label="Default select example" name="subjects">
+                        <option selected value="select" name="sub">--select--</option>
+                        <option value="Tamil" name="sub">Tamil</option>
+                        <option value="English" name="sub">English</option>
+                        <option value="Maths" name="sub">Mathematics</option>
+                        <option value="Science" name="sub">Science</option>
+                        <option value="SocialScience" name="sub">S.Science</option>
+                      </select>
+                      <div id="subjectserror" class="text-danger"></div>
+            </div>
+            </div>
+        </form>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+            <button class="btn btn-primary" id="myBtn" type="button" onclick="submit()" data-toggle="modal" data-target="">SUBMIT</button>
+        </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+    
+    <div class="container">
+        <h3>STUDENT TABLE</h3>
+    <table id="taccess" class="table table-bordered table-striped">
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Rollnumber</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Sports</th>
+            <th>Fav.subject</th>
+            <th>Actions</th>
+        </thead>
+        <tbody id="tbodyaccess">
+
+        </tbody>
+    </table>
+    </div>
+
+
+    <div id="popup" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">STUDENT FORM</h4>
+                </div>
+                <div class="modal-body">
+                    <p><strong>Note:</strong>Inserted successfully</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="closeBtn" class="btn btn-default" data-dismiss="modal">close</button>
+                </div>
+            </div>       
+        </div>
+       
+    </div>
+    
+
+    <script>
+        function submit(){
+            // var a=5;
+            // console.log("'"+a+"'");
+           var studentinfo = read();
+           if((!studentinfo.name=="") && (!studentinfo.age=="") && (!studentinfo.rollno=="") && (!studentinfo.email=="") && (!studentinfo.address=="") && (!studentinfo.gender=="") && (!studentinfo.sports=="")&&(!studentinfo.subject=="")&&(tval=="")){
+            arrayfun(studentinfo);
+            tableinsert();
+            document.getElementById("faccess").reset();
+            alert("Data's are successfully inserted in a table");
+           
+           }
+           else{
+            if(!tval==""){
+                onUpdate();
+                alert("update has successfully completed!");
+            }
+            else{
+                alert("Please fill out all fields");
+            }
+            
+        }
+    }
+
+        function read(){
+            var student ={}
+            var errors={
+                "name":{
+                    "req":{"msg":"Name field will not be empty"},
+                    "minlen":{"msg":"Minimum 4 characters is required"},
+                    "maxlen":{"msg":"Maximum 25 characters only allowed"},
+                    "type":{"msg":"Alphabets only allowed"}
+                },
+                "age":{
+                    "req":{"msg":"Age field will not be empty"},
+                    "valid":{"msg":"Enter a valid age"},
+                    "type":{"msg":"Number only"}
+                },
+                "rollno":{
+                    "req":{"msg":"Rollnumber is required"},
+                    "minlen":{"msg":"minimum 6 characters is required"},
+                    "maxlen":{"msg":"maximum 6 characters only allowed"},
+                    "type":{"msg":"characters and numbers only allowed"}
+                },
+                "mail":{
+                    "req":{"msg":"Enter your Email"},
+                    "minlen":{"msg":"Minum 15 characters required for a valid email"},
+                    "maxlen":{"msg":"Maximum 40 characters only allowed"},
+                    "valid":{"msg":"Enter a valid email"}
+                },
+                "add":{
+                    "req":{"msg":"This field will not be empty"},
+                    "type":{"msg":"A-Z,a-z,0-9, space and / only allowed"}
+                },
+                "radio":{
+                    "req":{"msg":"Please select your gender"}
+                },
+                "checkbox":{
+                    "req":{"msg":"Please select your favourite sports"}
+                },
+                "dropdown":{
+                    "req":{"msg":"Please select your fav. subject"}
+                }
+            }
+
+            var key = Object.keys(errors);
+            // console.log(key)
+
+            var form=document.getElementById('faccess');
+
+            var namecheck=/^[A-Za-z\t-]{3,25}$/;
+            var rollnocheck=/^[A-Za-z0-9]{6,6}$/;
+            var agecheck=/^[0-9]{1,2}$/;
+            var mailcheck=/^[a-zA-Z0-9]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/; 
+            var addcheck= /^[A-Za-z0-9\t-\.\/\,]+$/;
+
+
+            for(var i=0; i<form.length; i++){
+                var getform=form.elements[i]
+                // console.log(getform)
+
+                var id_s = getform.id;
+                var name_s = getform.name;
+
+                for(var j=0; j<key.length; j++){
+                    var getkey=Object.keys(errors[key[j]])
+                    // console.log(getkey)
+                    for(var k=0; k<getkey.length; k++){
+                        var test = getkey[k];
+
+
+                        if(getform.type=="text"){
+                            if(getform.id=="name"){
+                                var txtval=getform.value;
+
+                            if(getkey[k]){
+                                if(txtval==""){
+                                    document.getElementById(id_s+"error").innerHTML=errors.name.req.msg;
+                                
+                                }
+                            }
+                            if(getkey[k]){
+                                if(txtval.length>0 && txtval.length<5){
+                                    document.getElementById(id_s+"error").innerHTML=errors.name.minlen.msg;
+                                }
+                            }
+                            if(getkey[k]){
+                                if(txtval.length>25){
+                                    document.getElementById(id_s+"error").innerHTML=errors.name.maxlen.msg;
+                                }
+                            }
+                            if(getkey[k]){
+                                if(txtval.length>3 && txtval.length<25){
+                                    if(txtval.match(namecheck)){
+                                        document.getElementById(id_s+"error").innerHTML=""
+                                        student.name=txtval;
+                                    }
+                                    else{
+                                        document.getElementById(id_s+"error").innerHTML=errors.name.type.msg;
+                                    }
+                                }
+                            }
+                        }
+
+                        if(getform.id=="rollno"){
+                            var txtval2=getform.value;
+
+                            if(getkey[k]){
+                                if(txtval2==""){
+                                    document.getElementById(id_s+"error").innerHTML=errors.rollno.req.msg;
+                                }
+                            }
+                            if(getkey[k]){
+                                if(txtval2.length>0 && txtval2.length<6){
+                                    document.getElementById(id_s+"error").innerHTML=errors.rollno.minlen.msg;
+                                }
+                            }
+                            if(getkey[k]){
+                                if(txtval2.length>6){
+                                    document.getElementById(id_s+"error").innerHTML=errors.rollno.maxlen.msg;
+                                }
+                            }
+                            if(getkey[k]){
+                                if(txtval2.length>0 && txtval2.length<=6){
+                                    if(txtval2.match(rollnocheck)){
+                                        document.getElementById(id_s+"error").innerHTML="";
+                                        student.rollno=txtval2;
+                                    }
+                                    else{
+                                        document.getElementById(id_s+"error").innerHTML=errors.rollno.type.msg;
+                                    }
+                                }
+                            }
+                            
+                        }
+                        }
+
+                        if(getform.type=="number"){
+                            var numval=getform.value;
+                            //console.log(numval);
+
+                        if(getkey[k]){
+                            if(numval==""){
+                                document.getElementById(id_s+"error").innerHTML=errors.age.req.msg;
+                            }
+                        }
+                        if(getkey[k]){
+                            if(numval.length>=3){
+                                if(numval>100){
+                                    document.getElementById(id_s+"error").innerHTML=errors.age.valid.msg;
+                                }
+                            }
+                        }
+                        if(getkey[k]){
+                            if(numval.length>=1 && numval.length<=3 && numval<=100){
+                                if(numval.match(agecheck)){
+                                    document.getElementById(id_s+"error").innerHTML="";
+                                    student.age=numval;
+                                }
+                                else{
+                                    document.getElementById(id_s+"error").innerHTML=errors.age.type.age;
+                                }
+                            }
+                        }
+                        }
+
+                        if(getform.type=="email"){
+                        var mailvalue = getform.value;
+                        //console.log(mailvalue);
+
+                        if(getkey[k]){
+                            if(mailvalue==""){
+                                document.getElementById(id_s+"error").innerHTML=errors.mail.req.msg;
+                            }
+                        }
+                        if(getkey[k]){
+                            if(mailvalue.length>0 && mailvalue.length<15){
+                                document.getElementById(id_s+"error").innerHTML=errors.mail.minlen.msg;
+                            }
+                        }
+                        if(getkey[k]){
+                            if(mailvalue.length>40){
+                                document.getElementById(id_s+"error").innerHTML=errors.mail.maxlen.msg;
+                            }
+                        }
+                        if(getkey[k]){
+                            if(mailvalue.length>=15 && mailvalue.length<=40){
+                                if(mailvalue.match(mailcheck)){
+                                    document.getElementById(id_s+"error").innerHTML="";
+                                    student.email=mailvalue;
+                                }
+                                else{
+                                    document.getElementById(id_s+"error").innerHTML=errors.mail.valid.msg;
+                                }
+                            }
+                        }
+                    }
+
+                    if(getform.type=="textarea"){
+                        var addvalue = getform.value;
+                        //console.log(addvalue);
+                        if(getkey[k]){
+                            if(addvalue==""){
+                                document.getElementById(id_s+"error").innerHTML=errors.add.req.msg;
+                            }
+                        }
+                        if(getkey[k]){
+                            if(addvalue.length>0){
+                                if(addvalue.match(addcheck)){
+                                    document.getElementById(id_s+"error").innerHTML="";
+                                    student.address=addvalue;
+                                }
+                                else{
+                                    document.getElementById(id_s+"error").innerHTML=errors.add.type.msg;
+                                }
+                            }
+                            
+                        }
+                    }
+
+                    if(getform.type=="radio"){
+                        var radios = document.getElementsByName(name_s);
+                        // console.log(radios);
+                        for(var l=0; l<radios.length; l++){
+                            if(getkey[k]){
+                                if(radios[l].checked){
+                                    var rval = radios[l].value;
+                                    document.getElementById(name_s+"error").innerHTML="";
+                                    student.gender=rval;
+                                   // console.log(rval);
+                                    break;
+                                }
+                                else{
+                                    document.getElementById(name_s+"error").innerHTML=errors.radio.req.msg;
+                                }
+                            }
+                        }
+
+                    }
+
+                    if(getform.type=="checkbox"){
+                        var cbox = document.getElementsByName(name_s);
+                        // console.log(cbox)
+                        var carray=[];
+                        var status=false;
+                        for(var m=0; m<cbox.length; m++){
+                            if(getkey[k]){
+                                if(cbox[m].checked){
+                                    status=true;
+                                    carray.push(cbox[m].value)
+                                    student.sports=carray;
+                                    //console.log(carray);
+                                }
+                                else{
+                                    if(status==true){
+                                        document.getElementById(name_s+"error").innerHTML="";
+                                    }
+                                    else{
+                                        document.getElementById(name_s+"error").innerHTML=errors.checkbox.req.msg;
+                                    }
+                                    
+                                }
+                            }
+                        }
+                        
+                    }
+
+                    if(getform.name=="subjects"){
+                        var dropdown = document.getElementsByName("sub");
+                        // console.log(dropdown);
+                        var frstval = document.getElementsByName("sub")[0].value;
+//                        console.log(frstval)
+                        for(var n=0; n<dropdown.length; n++){
+                            if(getkey[k]){
+                            if(dropdown[n].selected){
+                                var dropval=dropdown[n].value;
+                                student.subject = dropval;
+                                document.getElementById(name_s+"error").innerHTML="";
+                                //console.log(dropval);
+                            }
+                            else{
+                                if(frstval==dropval){
+                                    document.getElementById(name_s+"error").innerHTML=errors.dropdown.req.msg;
+                                }
+                            }
+                        }
+                        }
+                    }
+
+                    }
+                }
+
+            }
+            return student;
+        }
+
+        var array=[];
+        function arrayfun(student){
+           
+            array.push(student);
+            console.log(array);
+
+        }
+        // var i=1;
+        function tableinsert(student){
+            
+            var table=document.getElementById("tbodyaccess");
+            table.innerHTML="";
+
+            var table = document.getElementById("tbodyaccess");
+            
+
+            for(var i=0; i<array.length; i++){
+                var row = table.insertRow(table.length);
+
+                var cell0 = row.insertCell(0);
+                cell0.innerHTML=array[i].name;
+
+                var cell1 = row.insertCell(1);
+                cell1.innerHTML=array[i].age;
+
+                var cell2 = row.insertCell(2);
+                cell2.innerHTML=array[i].rollno;
+
+
+                var cell3 = row.insertCell(3);
+                cell3.innerHTML=array[i].email;
+
+                var cell4 = row.insertCell(4);
+                cell4.innerHTML=array[i].address;
+
+                var cell5 = row.insertCell(5);
+                cell5.innerHTML=array[i].gender;
+
+                var cell6 = row.insertCell(6);
+                cell6.innerHTML=array[i].sports;
+
+                var cell7=row.insertCell(7);
+                cell7.innerHTML=array[i].subject;
+
+                var cell8 = row.insertCell(8);
+                cell8.innerHTML="<button  class='btn btn-info' onclick='onEdit(rollno)'>Edit</button> <button class='btn btn-danger' onclick='onDelete(this)'>Delete</button>"
+                // console.log(cell7.innerHTML);
+                
+                // i++;
+            }
+            // console.log(student.rollno)
+           
+            
+           
+
+        }
+
+        var tval="";
+        function onEdit(td){
+            document.getElementById("faccess").reset();
+
+            tval = td.parentElement.parentElement;
+            console.log(tval);
+
+            document.getElementById("name").value=tval.cells[0].innerHTML;
+            document.getElementById("age").value=tval.cells[1].innerHTML;
+            document.getElementById("rollno").value=tval.cells[2].innerHTML;
+            document.getElementById("mail").value=tval.cells[3].innerHTML;
+            document.getElementById("add").value=tval.cells[4].innerHTML;
+            var radioval = tval.cells[5].innerHTML;
+
+            var radio = document.getElementsByName("gender");
+            for(let i=0; i<radio.length; i++){
+                if(radioval==radio[i].value){
+                    radio[i].checked=true;
+                }
+            }
+
+            var cboxval = tval.cells[6].innerHTML;
+
+            var cbox = document.getElementsByName("sport");
+            var sportary = cboxval.split(",");
+
+            for(let j=0; j<cbox.length; j++){
+                for(let k=0; k<sportary.length; k++){
+                    if(sportary[k]==cbox[j].value){
+                        cbox[j].checked=true;
+                    }
+                }
+            }
+
+            var favsub = tval.cells[7].innerHTML;
+            console.log("favsub"+favsub)
+
+            var sub = document.getElementsByName("sub");
+            console.log(sub);
+
+            for(let l=0; l<sub.length; l++){
+                if(favsub==sub[l].value){
+                    sub[l].selected=true;
+                }
+            }
+           
+        }
+
+        function onUpdate(){
+            let get1 = document.getElementById("name").value;
+            let get2 = document.getElementById("age").value;
+            let get3 = document.getElementById("rollno").value;
+            let get4 = document.getElementById("mail").value;
+            let get5 = document.getElementById("add").value;
+            var r = document.getElementsByName("gender");
+
+                for(let j=0; j<r.length; j++){
+                    if(r[j].checked){
+                       let rval = r[j].value;
+                       var get6 = rval;
+                    }
+                }
+
+            var c = document.getElementsByName("sport");
+            var carray=[];
+
+            for(let k=0; k<c.length; k++){
+            if(c[k].checked){
+                carray.push(c[k].value);
+                var get7=carray;
+               }
+            }
+
+            var d = document.getElementsByName("sub");
+            for(let l=0; l<d.length; l++){
+                    if(d[l].selected){
+                       let dval = d[l].value;
+                       var get8 = dval;
+                    }
+                }
+
+            for(let i=0; i<array.length; i++){
+                if(array[i].rollno==get3){
+                    array[i].name=get1;
+                    array[i].age=get2;
+                    array[i].rollno=get3;
+                    array[i].email=get4;
+                    array[i].address=get5;
+                    array[i].gender=get6;
+                    array[i].sports=get7;
+                    array[i].subject=get8;
+
+                    console.log(array);
+                }
+            }
+
+            tval.cells[0].innerHTML=get1;
+            tval.cells[1].innerHTML=get2;
+            tval.cells[2].innerHTML=get3;
+            tval.cells[3].innerHTML=get4;
+            tval.cells[4].innerHTML=get5;
+            tval.cells[5].innerHTML=get6;
+            tval.cells[6].innerHTML=get7;
+            tval.cells[7].innerHTML=get8;
+            
+            // document.getElementById("faccess").reset();
+        }
+
+        function onDelete(td){
+            var rowdel = td;
+            document.getElementById("tbodyaccess").deleteRow(rowdel.rowIndex);
+
+            var rowdelary=td.parentElement.parentElement;
+            var rollnoget = rowdelary.cells[2].innerHTML;
+            console.log(rollnoget);
+
+            for(let i=0; i<array.length; i++){
+                var aryrlno = array[i].rollno;
+                console.log(aryrlno);
+                if(rollnoget==aryrlno){
+                    // console.log("in")
+                    array.splice(rowdelary.rowIndex,1);
+                    alert("Table has been Deleted successfully!");
+                    // console.log("out");
+                    console.log(array);
+                }
+            }
+            tableinsert();
+
+        }
+        
+       
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
